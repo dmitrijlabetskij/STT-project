@@ -3,7 +3,7 @@ import subprocess
 
 class Diarization:
     def __init__(self):
-        self.script_path = '../bot/whisper-diarization/diarize.py'
+        self.script_path = 'bot/whisper-diarization/diarize.py'
         self.command = f"python {self.script_path} --whisper-model medium --device cuda --no-stem -a "
 
     def run(self, audio):
@@ -25,8 +25,10 @@ class Diarization:
             else:
                 outfile.write("Файл SRT не найден.")
 
-        self.command = f"python {self.script_path} --whisper-model medium --device cuda --no-stem -a "
         # Удаляем временные файлы, если нужно
         os.remove(srt_file) if os.path.exists(srt_file) else None
 
         print(f"Результаты сохранены в файл: {output_file}")
+        
+        self.command = f"python {self.script_path} --whisper-model medium --device cuda --no-stem -a "
+        
