@@ -208,6 +208,6 @@ class TelegramBot:
 
 
 if __name__ == "__main__":
-    API_KEY = "8021952704:AAGyDAPS5NoNYuBl8WxEV41vulOG6AfisWg"
+    API_KEY = "***"
     bot = TelegramBot(API_KEY)
     bot.run()
